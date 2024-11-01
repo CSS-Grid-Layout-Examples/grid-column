@@ -1,0 +1,84 @@
+/* app imports */
+@import "../../common/css/variables.scss";
+@import "../../common/css/mixins.scss";
+@import "./list-item-styles.scss";
+
+.container {
+  overflow: hidden;
+  margin-top: 100px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border-radius: 15px;
+  background: #eee;
+  padding: 100px 50px calc(100px - 15px) 50px !important;
+  &:last-child {
+    margin-bottom: 100px;
+  }
+  .info {
+    line-height: 1.4rem;
+    font-size: 0.85rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+.simpleMultiColumnSpan {
+  ul {
+    margin-bottom: 45px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(5, 1fr);
+    li:nth-child(2) {
+      grid-column: span 2;
+    }
+  }
+}
+.multiColumnGridStartEnd {
+  ul {
+    margin-bottom: 45px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(5, 1fr);
+    li:nth-child(3) {
+      grid-column-start: 3;
+      grid-column-end: 5;
+    }
+  }
+}
+.multiColumnWithGap {
+  ul {
+    margin-bottom: 45px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(5, 1fr);
+    li:nth-child(2) {
+      grid-column: 3/5;
+    }
+  }
+}
+.multiColumnAsymetry {
+  ul {
+    margin-bottom: 45px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(5, 1fr);
+    li {
+      &:first-child {
+        grid-column: span 3;
+      }
+      &:nth-child(2) {
+        grid-column: 1 / 2;
+      }
+      &:nth-child(3) {
+        grid-column: 2 / 4;
+      }
+      &:nth-child(4) {
+        grid-column: 1 / 2;
+      }
+      &:last-child {
+        grid-column: span 3;
+      }
+    }
+  }
+}
